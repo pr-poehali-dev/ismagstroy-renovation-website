@@ -9,6 +9,7 @@ const services = [
   { icon: 'Wrench', title: 'Черновая отделка', desc: 'Стяжка, штукатурка, электрика и разводка коммуникаций под ключ.' },
   { icon: 'PaintRoller', title: 'Финишная отделка', desc: 'Покраска, обои, укладка плитки и напольных покрытий. Идеальные поверхности.' },
   { icon: 'Droplets', title: 'Сантехника', desc: 'Установка и подключение сантехники, монтаж систем водоснабжения.' },
+  { icon: 'Zap', title: 'Электрика', desc: 'Разводка проводки, установка розеток, выключателей и электрощитов.' },
 ];
 
 const works = [
@@ -131,7 +132,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {services.map((s, i) => (
               <div
                 key={s.title}
