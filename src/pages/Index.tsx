@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import RequestDialog from '@/components/RequestDialog';
+import MeasurementForm from '@/components/MeasurementForm';
 
 const services = [
   { icon: 'Hammer', title: 'Демонтаж', desc: 'Аккуратно снимаем старое покрытие, стены и перегородки. Вывоз мусора включён.' },
@@ -40,7 +41,8 @@ const Index = () => {
           </div>
           <nav className="hidden md:flex items-center gap-8 font-medium text-sm">
             <a href="#services" className="hover:text-accent transition-colors">Услуги</a>
-            <a href="#about" className="hover:text-accent transition-colors">О нас</a>
+            <a href="#works" className="hover:text-accent transition-colors">Работы</a>
+            <a href="#measurement" className="hover:text-accent transition-colors">Замер</a>
             <a href="#contacts" className="hover:text-accent transition-colors">Контакты</a>
           </nav>
           <Button
@@ -209,8 +211,10 @@ const Index = () => {
         </div>
       </section>
 
+      <MeasurementForm />
+
       {/* CTA / Contacts */}
-      <section id="contacts" className="py-24 md:py-32">
+      <section id="contacts" className="py-24 md:py-32 bg-secondary/40">
         <div className="container">
           <div className="relative bg-accent text-accent-foreground rounded-3xl px-8 py-16 md:p-20 overflow-hidden">
             <Icon name="Building2" size={320} className="absolute -right-16 -bottom-16 opacity-10" />

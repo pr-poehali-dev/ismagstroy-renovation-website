@@ -36,6 +36,9 @@ def handler(event: dict, context) -> dict:
     name = str(body_data.get('name', '')).strip()
     phone = str(body_data.get('phone', '')).strip()
     message = str(body_data.get('message', '')).strip()
+    address = str(body_data.get('address', '')).strip()
+    area = str(body_data.get('area', '')).strip()
+    request_type = str(body_data.get('type', 'Общая заявка')).strip()
 
     if not name or not phone:
         return {
@@ -59,12 +62,15 @@ def handler(event: dict, context) -> dict:
     msg = MIMEMultipart()
     msg['From'] = gmail_address
     msg['To'] = recipient
-    msg['Subject'] = f'Новая заявка с сайта ISMAGSTROY от {name}'
+    msg['Subject'] = f'{request_type} — заявка от {name}'
 
     body_text = f'''Новая заявка с сайта ISMAGSTROY
+Тип заявки: {request_type}
 
 Имя: {name}
 Телефон: {phone}
+Адрес объекта: {address if address else "—"}
+Площадь: {area if area else "—"}
 Комментарий: {message if message else "—"}
 '''
     msg.attach(MIMEText(body_text, 'plain', 'utf-8'))
