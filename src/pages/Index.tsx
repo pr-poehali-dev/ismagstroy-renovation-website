@@ -12,7 +12,7 @@ const services = [
 
 const works = [
   { img: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/bucket/5fff1925-a2a1-4496-9f14-20363898c5d0.jpg', title: 'Санузел', tag: 'Сантехника + плитка' },
-  { img: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/files/5eb69c74-fe1f-49a4-8d54-044fd7b56ed8.jpg', title: 'Кухня', tag: 'Ремонт под ключ' },
+  { img: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/bucket/9735c7d9-051b-4090-9b05-a85b7bcea275.jpg', title: 'Кухня-гостиная', tag: 'Ремонт под ключ' },
   { img: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/bucket/bd7d2114-70d3-430e-afb6-a0c0e5a3f632.jpg', title: 'Ванная комната', tag: 'Сантехника + плитка' },
 ];
 
