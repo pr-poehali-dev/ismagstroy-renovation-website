@@ -15,7 +15,7 @@ const services = [
 const works = [
   { img: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/bucket/5fff1925-a2a1-4496-9f14-20363898c5d0.jpg', title: 'Санузел', tag: 'Сантехника + плитка' },
   { img: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/bucket/9735c7d9-051b-4090-9b05-a85b7bcea275.jpg', title: 'Кухня-гостиная', tag: 'Ремонт под ключ' },
-  { img: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/bucket/bd7d2114-70d3-430e-afb6-a0c0e5a3f632.jpg', title: 'Ванная комната', tag: 'Сантехника + плитка' },
+  { img: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/bucket/c38560d0-152c-4cea-88d3-38260dd48c8d.jpg', title: 'Ванная комната', tag: 'Сантехника + плитка', rotate: true },
 ];
 
 const advantages = [
@@ -173,11 +173,13 @@ const Index = () => {
                 className="group relative rounded-2xl overflow-hidden aspect-[4/5]"
                 style={{ animation: `fade-in 0.6s ease-out ${i * 0.1}s both` }}
               >
-                <img
-                  src={w.img}
-                  alt={w.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                <div className={`w-full h-full ${w.rotate ? 'rotate-180' : ''}`}>
+                  <img
+                    src={w.img}
+                    alt={w.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <span className="inline-block px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-semibold uppercase mb-2">
