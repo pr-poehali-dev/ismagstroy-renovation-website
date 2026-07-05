@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
+import RequestDialog from '@/components/RequestDialog';
 
 const services = [
   { icon: 'Hammer', title: 'Демонтаж', desc: 'Аккуратно снимаем старое покрытие, стены и перегородки. Вывоз мусора включён.' },
@@ -16,8 +18,11 @@ const advantages = [
 ];
 
 const Index = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background text-foreground noise-bg overflow-x-hidden">
+      <RequestDialog open={dialogOpen} onOpenChange={setDialogOpen} />
       {/* Header */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
         <div className="container flex items-center justify-between h-20">
@@ -32,7 +37,10 @@ const Index = () => {
             <a href="#about" className="hover:text-accent transition-colors">О нас</a>
             <a href="#contacts" className="hover:text-accent transition-colors">Контакты</a>
           </nav>
-          <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full px-6">
+          <Button
+            onClick={() => setDialogOpen(true)}
+            className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full px-6"
+          >
             Оставить заявку
           </Button>
         </div>
@@ -56,7 +64,11 @@ const Index = () => {
               покрытий и установки сантехники. По договору, с фиксированной сметой и гарантией.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full px-8 text-base h-14">
+              <Button
+                onClick={() => setDialogOpen(true)}
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full px-8 text-base h-14"
+              >
                 Рассчитать стоимость
                 <Icon name="ArrowRight" size={18} className="ml-1" />
               </Button>
@@ -165,7 +177,11 @@ const Index = () => {
                 Бесплатный выезд замерщика по Москве.
               </p>
               <div className="flex flex-wrap items-center gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 h-14 text-base font-semibold">
+                <Button
+                  onClick={() => setDialogOpen(true)}
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 h-14 text-base font-semibold"
+                >
                   <Icon name="Phone" size={18} className="mr-1" />
                   Заказать звонок
                 </Button>
