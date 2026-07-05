@@ -173,7 +173,7 @@ const Index = () => {
                 className="group relative rounded-2xl overflow-hidden aspect-[4/5]"
                 style={{ animation: `fade-in 0.6s ease-out ${i * 0.1}s both` }}
               >
-                <div className={`w-full h-full ${w.rotate ? 'rotate-180' : ''}`}>
+                <div className={`w-full h-full ${w.rotate ? 'rotate-90' : ''}`}>
                   <img
                     src={w.img}
                     alt={w.title}
