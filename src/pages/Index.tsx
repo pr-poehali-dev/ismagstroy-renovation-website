@@ -10,6 +10,12 @@ const services = [
   { icon: 'Droplets', title: 'Сантехника', desc: 'Установка и подключение сантехники, монтаж систем водоснабжения.' },
 ];
 
+const works = [
+  { img: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/files/5f738f2d-0892-4298-96fa-8c79ade753b0.jpg', title: 'Гостиная', tag: 'Финишная отделка' },
+  { img: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/files/5eb69c74-fe1f-49a4-8d54-044fd7b56ed8.jpg', title: 'Кухня', tag: 'Ремонт под ключ' },
+  { img: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/files/b74443cd-1ce0-4593-834d-e11e8a8534bc.jpg', title: 'Ванная комната', tag: 'Сантехника + плитка' },
+];
+
 const advantages = [
   { name: 'FileText', title: 'Работаем по договору', desc: 'Прозрачные условия, фиксированная смета без скрытых доплат.' },
   { name: 'ShieldCheck', title: 'Гарантия на работы', desc: 'Отвечаем за качество каждого этапа и даём гарантию на результат.' },
@@ -72,9 +78,11 @@ const Index = () => {
                 Рассчитать стоимость
                 <Icon name="ArrowRight" size={18} className="ml-1" />
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 text-base h-14 border-2 font-semibold">
-                Наши работы
-              </Button>
+              <a href="#works">
+                <Button size="lg" variant="outline" className="rounded-full px-8 text-base h-14 border-2 font-semibold w-full">
+                  Наши работы
+                </Button>
+              </a>
             </div>
           </div>
 
@@ -136,6 +144,44 @@ const Index = () => {
                 <span className="absolute top-6 right-6 font-display font-bold text-5xl text-secondary group-hover:text-accent/20 transition-colors">
                   0{i + 1}
                 </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Works */}
+      <section id="works" className="py-24 md:py-32 bg-secondary/40">
+        <div className="container">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div>
+              <span className="font-display uppercase tracking-widest text-accent text-sm font-semibold">— Наши работы</span>
+              <h2 className="font-display font-bold uppercase text-4xl md:text-6xl leading-none mt-3">Готовые<br />объекты</h2>
+            </div>
+            <p className="text-muted-foreground max-w-sm text-lg">
+              Несколько примеров ремонта, который мы выполнили под ключ в Москве.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {works.map((w, i) => (
+              <div
+                key={w.title}
+                className="group relative rounded-2xl overflow-hidden aspect-[4/5]"
+                style={{ animation: `fade-in 0.6s ease-out ${i * 0.1}s both` }}
+              >
+                <img
+                  src={w.img}
+                  alt={w.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className="inline-block px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-semibold uppercase mb-2">
+                    {w.tag}
+                  </span>
+                  <h3 className="font-display font-bold uppercase text-2xl text-white">{w.title}</h3>
+                </div>
               </div>
             ))}
           </div>
