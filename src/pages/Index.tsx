@@ -19,7 +19,7 @@ const works = [
 ];
 
 const beforeAfter = [
-  { title: 'Объект 1', desc: 'Опишите здесь, что было сделано на объекте', before: '', after: '' },
+  { title: 'Объект 1', desc: 'Опишите здесь, что было сделано на объекте', before: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/bucket/681259de-1c85-4406-aaa4-f8104c5e832d.jpg', after: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/bucket/0b9a460c-9d10-43d3-8429-1db350249ba8.jpg' },
   { title: 'Объект 2', desc: 'Опишите здесь, что было сделано на объекте', before: '', after: '' },
   { title: 'Объект 3', desc: 'Опишите здесь, что было сделано на объекте', before: '', after: '' },
 ];
