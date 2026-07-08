@@ -18,6 +18,12 @@ const works = [
   { img: 'https://cdn.poehali.dev/projects/53abd73f-9826-4a17-b8cb-f689448c09fb/bucket/c38560d0-152c-4cea-88d3-38260dd48c8d.jpg', title: 'Ванная комната', tag: 'Сантехника + плитка', rotate: true },
 ];
 
+const beforeAfter = [
+  { title: 'Объект 1', desc: 'Опишите здесь, что было сделано на объекте', before: '', after: '' },
+  { title: 'Объект 2', desc: 'Опишите здесь, что было сделано на объекте', before: '', after: '' },
+  { title: 'Объект 3', desc: 'Опишите здесь, что было сделано на объекте', before: '', after: '' },
+];
+
 const advantages = [
   { name: 'FileText', title: 'Работаем по договору', desc: 'Прозрачные условия, фиксированная смета без скрытых доплат.' },
   { name: 'ShieldCheck', title: 'Гарантия на работы', desc: 'Отвечаем за качество каждого этапа и даём гарантию на результат.' },
@@ -43,6 +49,7 @@ const Index = () => {
           <nav className="hidden md:flex items-center gap-8 font-medium text-sm">
             <a href="#services" className="hover:text-accent transition-colors">Услуги</a>
             <a href="#works" className="hover:text-accent transition-colors">Работы</a>
+            <a href="#portfolio" className="hover:text-accent transition-colors">До / После</a>
             <a href="#measurement" className="hover:text-accent transition-colors">Замер</a>
             <a href="#contacts" className="hover:text-accent transition-colors">Контакты</a>
           </nav>
@@ -186,6 +193,63 @@ const Index = () => {
                     {w.tag}
                   </span>
                   <h3 className="font-display font-bold uppercase text-2xl text-white">{w.title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Before / After Portfolio */}
+      <section id="portfolio" className="py-24 md:py-32">
+        <div className="container">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div>
+              <span className="font-display uppercase tracking-widest text-accent text-sm font-semibold">— Портфолио</span>
+              <h2 className="font-display font-bold uppercase text-4xl md:text-6xl leading-none mt-3">До и после</h2>
+            </div>
+            <p className="text-muted-foreground max-w-sm text-lg">
+              Реальные примеры преображения объектов — оцените результат нашей работы.
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {beforeAfter.map((b, i) => (
+              <div
+                key={b.title}
+                style={{ animation: `fade-in 0.6s ease-out ${i * 0.1}s both` }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-display font-bold uppercase text-2xl md:text-3xl">{b.title}</h3>
+                </div>
+                <p className="text-muted-foreground mb-6 max-w-2xl">{b.desc}</p>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-secondary border border-border">
+                    {b.before ? (
+                      <img src={b.before} alt={`${b.title} до`} className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-muted-foreground gap-2">
+                        <Icon name="ImagePlus" size={28} />
+                        Добавьте фото «до»
+                      </div>
+                    )}
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-semibold uppercase">
+                      До
+                    </span>
+                  </div>
+                  <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-secondary border border-border">
+                    {b.after ? (
+                      <img src={b.after} alt={`${b.title} после`} className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-muted-foreground gap-2">
+                        <Icon name="ImagePlus" size={28} />
+                        Добавьте фото «после»
+                      </div>
+                    )}
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-semibold uppercase">
+                      После
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
